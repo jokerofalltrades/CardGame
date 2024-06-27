@@ -133,7 +133,9 @@ public class Game
       TotalSac -= Convert.ToInt32(Card[5]);
       if (TotalSac >= SacNeeded)
       {
-        string[] CardtobePlayed = deck.hand[numberOfCard];
+        CardtobePlayed = new string[deck.hand[numberOfCard].Length]; // Create a new array
+        deck.hand[numberOfCard].CopyTo(CardtobePlayed, 0);
+        Thread.Sleep(500);
         deck.hand.RemoveAt(numberOfCard);
         while (SacNeeded > SacGot)
         {
