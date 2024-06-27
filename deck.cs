@@ -31,11 +31,14 @@ public class Deck
         unlockedcards = new List<string[]> {};
         totalcards = new List<string[]>
         {
-          new string[] { "Duck","0","1","None","0","1","000" },
-          new string[] { "Pig","1","3","None","1","1","001" },
-          new string[] { "Horse","2","2","None","2","1","002" },
-          new string[] { "Swan","1","5","Distracting","2","1","003" },
-          new string[] { "Rat","2","1","Infectious","2","1","004" }
+          new string[] { "Memory Stick","0","1","None","0","1","000" },
+          new string[] { "CPU","1","3","None","1","1","001" },
+          new string[] { "Motherboard","2","2","None","2","1","002" },
+          new string[] { "GPU","1","5","Distracting","2","1","003" },
+          new string[] { "Worm","2","1","Infectious","2","1","004" },
+          new string[] { "Virus","1","1","Explosive","2","0","005" },
+          new string[] { "Trojan","2","3","Annoying","3","1","006" },
+          new string[] { "Power Source","1","9","None","4","2","007" }
         };
     }
   // Script Initalsing Deck
@@ -195,7 +198,8 @@ public class Deck
         bool cardPlayed = game.CheckCardSacrifice(numberOfCard,this);
         if (cardPlayed == true)
         {
-          game.CardSlot2 = game.CardtobePlayed;
+          game.CardSlot1 = new string[game.CardtobePlayed.Length];
+          game.CardtobePlayed.CopyTo(game.CardSlot1, 0);
           Array.Clear(game.CardtobePlayed);
         }
       }
@@ -204,7 +208,8 @@ public class Deck
         bool cardPlayed = game.CheckCardSacrifice(numberOfCard,this);
         if (cardPlayed == true)
         {
-          game.CardSlot2 = game.CardtobePlayed;
+          game.CardSlot2 = new string[game.CardtobePlayed.Length];
+          game.CardtobePlayed.CopyTo(game.CardSlot2, 0);
           Array.Clear(game.CardtobePlayed);
         }
       }
@@ -213,7 +218,8 @@ public class Deck
         bool cardPlayed = game.CheckCardSacrifice(numberOfCard,this);
         if (cardPlayed == true)
         {
-          game.CardSlot3 = game.CardtobePlayed;
+          game.CardSlot3 = new string[game.CardtobePlayed.Length];
+          game.CardtobePlayed.CopyTo(game.CardSlot3, 0);
           Array.Clear(game.CardtobePlayed);
         }
       }
@@ -222,7 +228,8 @@ public class Deck
         bool cardPlayed = game.CheckCardSacrifice(numberOfCard,this);
         if (cardPlayed == true)
         {
-          game.CardSlot4 = game.CardtobePlayed;
+          game.CardSlot4 = new string[game.CardtobePlayed.Length];
+          game.CardtobePlayed.CopyTo(game.CardSlot4, 0);
           Array.Clear(game.CardtobePlayed);
         }
       }
